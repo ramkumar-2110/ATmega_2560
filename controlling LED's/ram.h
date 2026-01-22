@@ -7,6 +7,6 @@ void ddr_f()
 void port_f()
 {
   volatile unsigned char *b;
-  b=(volatile unsigned char*)0x30;
+  b=(volatile unsigned char*)0x31;
   *b=0x00;
 }
