@@ -15,7 +15,7 @@ int main(void)
     
     while (1)
     {
-	    uint8_t i=1;
+	    int i=1;
 	    for(int j=0;j<8;j++)
 	    {
 		    port_d(i);
