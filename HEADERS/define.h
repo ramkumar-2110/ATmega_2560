@@ -1,7 +1,7 @@
 #include<stdint.h>
 
 #define a_pin (volatile uint8_t *)0x20
-#define a_dir (volatile uint8_t *)0x2
+#define a_dir (volatile uint8_t *)0x21
 #define a_dat (volatile uint8_t *)0x22
 #define b_pin (volatile uint8_t *)0x23
 #define b_dir (volatile uint8_t *)0x24
