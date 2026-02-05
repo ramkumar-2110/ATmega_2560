@@ -6,7 +6,7 @@ void port_write(volatile uint8_t* address,uint8_t value)
 }
 char port_read(volatile uint8_t* address)
 {
-	return (*address);
+	return *address;
 }
 void delay(float a)
 {
