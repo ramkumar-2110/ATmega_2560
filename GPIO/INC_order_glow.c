@@ -5,13 +5,13 @@
  * Author : RAMKUMAR
  */ 
 
-#include "gpio.h"
+#include "F:\Atmega\HEADERS\gpio.h"
 
 
 int main(void)
 {
 	
-	ddr_b(0xff);
+	port_write(b_dir,0xff);
 	
 	while (1)
 	{
@@ -20,7 +20,7 @@ int main(void)
 		{
 			for(int i=0;i<=j;i=(i<<1)+1)
 			{
-				port_b(i);
+				port_write(b_dat,i);
 				delay(1);
 			}
 			j=(j<<1)+1;
@@ -29,13 +29,13 @@ int main(void)
 }
 /*while(i!=0xff)
 		{
-			port_b(0x00);
+			port_write(b_dat,0x00);
 			delay(1);
-			port_b(i);
+			port_write(b_dat,i);
 			delay(1);
 			i=(i<<1)+1;
 		}
-		port_b(0x00);
+		port_write(b_dat,0x00);
 		delay(1);
-		port_b(i);
+		port_write(b_dat,i);
 		delay(1);*/

@@ -5,29 +5,29 @@
  * Author : RAMKUMAR
  */ 
 
-#include "gpio.h"
+#include "F:\Atmega\HEADERS\gpio.h"
 
 
 int main(void)
 {
-	ddr_l(0xff);
+	port_write(a_dir,0xff);
 	while(1)
 	{
-	for(int i=0;i<10;i++)
+	for(uint8_t i=0;i<10;i++)
     {
-		for(int j=0;j<10;j++)
+		for(uint8_t j=0;j<10;j++)
 		{
-			int n=0;
-			while (n<25)
-			{
-				port_l(0x02);
-				segment_7(j);
-				delay(0.05);
-				port_l(0x01);
-				segment_7(i);
-				delay(0.05);
-				n++;
-			}
+					int n=0;
+					while (n<10)
+					{
+						port_write(a_dat,0x01);
+						segment_7(k_dat,j);
+						delay(0.05);
+						port_write(a_dat,0x02);
+						segment_7(k_dat,i);
+						delay(0.05);
+						n++;
+					}
 		}
 	}
     }

@@ -5,7 +5,7 @@
  * Author : RAMKUMAR
  */ 
 
-#include "gpio.h"
+#include "F:\Atmega\HEADERS\gpio.h"
 
 
 int main(void)
@@ -13,8 +13,7 @@ int main(void)
     
     while (1) 
     {
-		ddr_j(0xff);
-		port_j(0x02);
+		port_write(j_dir,0xff);
+		port_write(j_dat,0x55);
     }
 }
-

@@ -5,19 +5,18 @@
  * Author : RAMKUMAR
  */ 
 
-#include "gpio.h"
+#include "F:\Atmega\HEADERS\gpio.h"
 
 
 int main(void)
 {
-	ddr_k(0xff);
+	port_write(k_dir,0xff);
     while (1) 
     {
-		port_k(0x01);
+		port_write(k_dat,0x01);
 		delay(1);
-		port_k(0x00);
+		port_write(k_dat,0x00);
 		delay(1);
 		
     }
 }
-
