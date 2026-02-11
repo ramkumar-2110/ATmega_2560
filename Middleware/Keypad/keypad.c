@@ -1,6 +1,8 @@
 #include "keypad.h"
 
-char keypad_scan(uint8_t x)
+/****function for scan a keypad****/
+
+char keypad_scan(uint8_t x) //x-->keypad connected port name
 {
 	while(1)
 	{
