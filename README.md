@@ -30,7 +30,7 @@ The focus of this project is to understand the internal architecture of AVR cont
 
 ---
 
-## 🛠 Tools Used
+## Tools Used
 
 - **Microchip Studio (Atmel Studio 7)**
 - Arduino mega Board
