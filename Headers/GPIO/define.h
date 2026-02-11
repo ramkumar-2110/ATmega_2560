@@ -1,11 +1,13 @@
-#ifndef DEFINE_H
-#define DEFINE_H
+#ifndef DEFINE_H //To exclude multiple includes of define.h 
+#define DEFINE_H //Include define.h when it still not included
 
 #include<stdint.h>
 
-extern volatile uint8_t *port[11];
-extern volatile uint8_t *ddr[11];
-extern volatile uint8_t *pin[11];
+/*****extern declares a variable without allocating a memory to it*****/
+
+extern volatile uint8_t *port[11]; //defining of PORT register pointer array
+extern volatile uint8_t *ddr[11];  //defining of DDR register pointer array
+extern volatile uint8_t *pin[11];  //defining of PIN register pointer array
 
 #define A 0
 #define B 1
@@ -23,4 +25,4 @@ extern volatile uint8_t *pin[11];
 #define OUTPUT 0xff
 #define INPUT 0x00
 
-#endif
+#endif //end the started if
