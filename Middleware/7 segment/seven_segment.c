@@ -1,10 +1,22 @@
 #include "seven_segment.h"
 #include "gpio.h"
+
+/**argument explanation 
+ x-->seven segment connected port name
+ i-->value(0 to 9)
+ y-->port for use as select**/
+
+
+/*****function for single seven segment*****/
+
 void segment7_1(uint8_t x,uint64_t i)
 {
 	char ss[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
 	*port[x]=ss[i];
 }
+
+/*****function for 2 seven segment*****/
+
 void segment7_2(uint8_t x,uint8_t y,uint64_t i)
 {
 	char ss[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
@@ -21,6 +33,9 @@ void segment7_2(uint8_t x,uint8_t y,uint64_t i)
 		n++;
 	}
 }
+
+/*****function for 3 seven segment*****/
+
 void segment7_3(uint8_t x,uint8_t y,uint64_t i)
 {
 	char ss[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
@@ -45,6 +60,9 @@ void segment7_3(uint8_t x,uint8_t y,uint64_t i)
 		n++;
 	}
 }
+
+/*****function for 4 seven segment*****/
+
 void segment7_4(uint8_t x,uint8_t y,uint64_t i)
 {
 	char ss[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
@@ -74,11 +92,17 @@ void segment7_4(uint8_t x,uint8_t y,uint64_t i)
 		n++;
 	}
 }
+
+/*****function for single seven segment with dot*****/
+
 void segment_dot(uint8_t x,uint8_t i)
 {
 	char ss[]={0xbf,0x86,0xdb,0xcf,0xe6,0xed,0xfd,0x87,0xff,0xef};
 	*port[x]=ss[i];
 }
+
+/*****function for single seven segment for symbols*****/
+
 void segment_symbol(uint8_t x,uint8_t i)
 {
 	char ss[]={0x73,0x40,0x76,0x49};
