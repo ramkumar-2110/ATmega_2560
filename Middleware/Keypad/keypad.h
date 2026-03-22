@@ -1,9 +1,9 @@
-#ifndef KEYPAD_H //To exclude multiple includes of keypad.h 
-#define KEYPAD_H //Include keypad.h when it still not included
+#ifndef KEYPAD_H  
+#define KEYPAD_H 
 
-#include "define.h" //To use keypad.h in main.c file must include define.h as well
-#include "gpio.h" //To use keypad.h in main.c file must include gpio.h as well
+#include "define.h" 
+#include "gpio.h" 
 
-char keypad_scan(uint8_t x); //declaration of function
+char keypad_scan(uint8_t x);//scans keypad
 
-#endif //end the if
+#endif 

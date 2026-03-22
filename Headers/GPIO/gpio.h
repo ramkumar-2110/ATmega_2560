@@ -1,19 +1,28 @@
-#ifndef GPIO_H //To exclude multiple includes of gpio.h 
-#define GPIO_H //Include gpio.h when it still not included
+#ifndef GPIO_H  
+#define GPIO_H 
 
-#include "define.h" //To use gpio.h in main.c file must include define.h as well
+#include "define.h" 
 
-/*****declaration of functions*****/
+#define INPUT   0
+#define OUTPUT  1
+#define LOW     0
+#define HIGH    1
 
-void port_config(uint8_t x,uint8_t value); 
-void pin_config(uint8_t x,uint8_t i,uint8_t value);
+#define pinMode      pin_config
+#define digitalWrite pin_write
+#define digitalRead  pin_read
 
-void port_write(uint8_t x,uint8_t value);
-void pin_write(uint8_t x,uint8_t i,uint8_t value);
+#define portMode     port_config
+#define portWrite    port_write
+#define portRead     port_read
 
-uint8_t port_read(uint8_t x);
-uint8_t pin_read(uint8_t x,uint8_t i);
+void port_config(port_index_t x,uint8_t value); 
+void pin_config(port_index_t x,uint8_t i,uint8_t value);
 
-void delay(float a);
+void port_write(port_index_t x,uint8_t value);
+void pin_write(port_index_t x,uint8_t i,uint8_t value);
 
-#endif //end the if
+uint8_t port_read(port_index_t x);
+uint8_t pin_read(port_index_t x,uint8_t i);
+
+#endif
