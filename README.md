@@ -1,37 +1,122 @@
-# ATmega2560 Microcontroller – Bare Metal Programming
+# ATmega2560 – Bare Metal Programming (Register Level)
 
-This repository contains my learning journey and custom implementations for the **ATmega2560 microcontroller** using **register-level bare metal programming in C**.  
-The focus of this project is to understand the internal architecture of AVR controllers without using Arduino libraries or high-level frameworks.
+This repository documents my learning and development journey with the **ATmega2560 microcontroller** using **bare-metal programming in Embedded C**.
 
----
-
-## What is in this Repository
-
-- ✔ Custom **register-level bare metal headers** for:
-  - GPIO control  
-  - Basic middleware abstraction  
-- ✔ Embedded programs written purely in **C language**
-- ✔ My **handwritten learning notes** and explanations  
-- ✔ Official **ATmega2560 datasheet** for reference  
-- ✔ `.gitignore` file – excludes build outputs such as `.exe`, `.o`, `.hex`
-- ✔ `.gitattributes` – maintains proper line endings and Git behavior
+The goal is to understand and implement microcontroller functionality at the **register level**, without relying on Arduino libraries or high-level abstractions.
 
 ---
 
-## Objective
+## Project Highlights
 
-- To learn how microcontrollers work at the **hardware register level**
-- To avoid Arduino abstraction and understand:
-  - Port manipulation  
-  - Bitwise operations  
+- ✔ Fully **bare-metal development (no Arduino libraries)**
+- ✔ Custom **driver development from scratch**
+- ✔ Focus on **hardware-level understanding**
+- ✔ Modular and reusable code structure
+
+---
+
+## Repository Structure
+ATmega_2560/
+│
+├── Drivers/
+│   ├── gpio.c
+│   ├── gpio.h
+│   ├── delay.c
+│   ├── delay.h
+│
+├── Middleware/
+│   ├── lcd.c
+│   ├── lcd.h
+│   ├── keypad.c
+│   ├── keypad.h
+│   ├── seven_segment.c
+│   ├── seven_segment.h
+│   ├── dot_matrix.c
+│   ├── dot_matrix.h
+│
+├── Applications/
+│   ├── calculator/
+│   │   ├── main.c
+│
+├── Datasheets/
+├── Notes/
+└── README.md
+
+
+---
+
+## Modules Implemented
+
+### 🔹 GPIO Driver
+- Direct register manipulation
+- Pin configuration (INPUT / OUTPUT)
+- Port read/write operations
+- Bit-level control
+
+---
+
+### 🔹 Delay Driver
+- Software-based delay using loops
+- Timing approximation without timers
+
+---
+
+### 🔹 LCD Driver (Middleware)
+- 16x2 LCD interface (8-bit mode)
+- Commands and data handling
+- Custom character support
+- String display functions
+
+---
+
+## 🎯 Objective
+
+- Understand **microcontroller internals**
+- Work with:
   - Memory-mapped registers  
-  - Low-level peripheral control
-- To build reusable headers for future AVR projects
+  - Bitwise operations  
+  - Hardware control without abstraction  
+- Build **reusable embedded drivers**
+- Strengthen **low-level embedded system design skills**
 
 ---
 
 ## Tools Used
 
 - **Microchip Studio (Atmel Studio 7)**
-- Arduino mega Board
-- **Proteus** for simulation
+- **Arduino Mega (ATmega2560)**
+- **Proteus** (Simulation)
+
+---
+
+## Learning Outcomes
+
+- Deep understanding of AVR architecture  
+- Experience in writing **driver-level code**  
+- Strong foundation in **embedded C programming**  
+- Ability to design **modular firmware systems**
+
+---
+
+## Future Work
+
+- Timer Driver  
+- UART (Serial Communication)  
+- Interrupt Handling  
+- PWM Driver  
+- RTOS-like Scheduler  
+
+---
+
+## Author
+
+**Ramkumar**  
+Embedded Systems Enthusiast  
+Department of ECE  
+
+---
+
+## Note
+
+This repository is focused on **learning and understanding**, not just implementation.  
+All code is written with the intention of **clarity, modularity, and reusability**.
