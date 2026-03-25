@@ -17,31 +17,34 @@ The goal is to understand and implement microcontroller functionality at the **r
 
 ## Repository Structure
 ATmega_2560/
-│
-├── Drivers/
-│   ├── gpio.c
-│   ├── gpio.h
-│   ├── delay.c
-│   ├── delay.h
-│
-├── Middleware/
-│   ├── lcd.c
-│   ├── lcd.h
-│   ├── keypad.c
-│   ├── keypad.h
-│   ├── seven_segment.c
-│   ├── seven_segment.h
-│   ├── dot_matrix.c
-│   ├── dot_matrix.h
-│
-├── Applications/
-│   ├── calculator/
-│   │   ├── main.c
-│
-├── Datasheets/
-├── Notes/
-└── README.md
 
+├── Drivers/
+│   ├── [gpio.c](Drivers/gpio.c)
+│   ├── [gpio.h](Drivers/gpio.h)
+│   ├── [delay.c](Drivers/delay.c)
+│   ├── [delay.h](Drivers/delay.h)
+
+├── Middleware/
+│   ├── [lcd.c](Middleware/lcd.c)
+│   ├── [lcd.h](Middleware/lcd.h)
+│   ├── [keypad.c](Middleware/keypad.c)
+│   ├── [keypad.h](Middleware/keypad.h)
+│   ├── [seven_segment.c](Middleware/seven_segment.c)
+│   ├── [seven_segment.h](Middleware/seven_segment.h)
+│   ├── [dot_matrix.c](Middleware/dot_matrix.c)
+│   ├── [dot_matrix.h](Middleware/dot_matrix.h)
+
+├── Applications/
+│   └── calculator/
+│       └── [main.c](Applications/calculator/main.c)
+
+├── Datasheets/
+│   └── [ATmega2560 Datasheet](Datasheets/ATmega2560.pdf)
+
+├── Notes/
+│   └── [Notes](Notes/)
+
+└── [README.md](README.md)
 
 ---
 
@@ -69,7 +72,7 @@ ATmega_2560/
 
 ---
 
-## 🎯 Objective
+## Objective
 
 - Understand **microcontroller internals**
 - Work with:
