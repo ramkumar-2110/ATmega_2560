@@ -8,8 +8,8 @@
 #define RS 2
 #define disp_left_shift 0x18
 #define disp_right_shift 0x1c
-#define data_line_1 0x80
-#define data_line_2 0xc0
+#define row_1 0x80
+#define row_2 0xc0
 #define clear_disp 0x01
 #define return_home 0x02
 
