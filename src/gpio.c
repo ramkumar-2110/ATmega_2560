@@ -1,4 +1,4 @@
-#include "F:\Atmega\Headers\GPIO\gpio.h"
+#include "gpio.h"
 
 /***** PORT CONFIG *****/
 void port_config(port_index_t x,uint8_t value)

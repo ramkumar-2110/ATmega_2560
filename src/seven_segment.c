@@ -9,7 +9,7 @@
 
 /*****function for single seven segment*****/
 
-void segment7_1(uint8_t x,uint64_t i)
+void segment7_1(port_index_t x,uint64_t i)
 {
 	char ss[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
 	*port[x]=ss[i];
@@ -17,7 +17,7 @@ void segment7_1(uint8_t x,uint64_t i)
 
 /*****function for 2 seven segment*****/
 
-void segment7_2(uint8_t x,uint8_t y,uint64_t i)
+void segment7_2(port_index_t x,port_index_t y,uint64_t i)
 {
 	char ss[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
 	*port[y]=0xff;
@@ -26,17 +26,17 @@ void segment7_2(uint8_t x,uint8_t y,uint64_t i)
 	{
 		*port[y]=0xfe;
 		*port[x]=ss[i%10];
-		delay(0.03);
+		delay_ms(1);
 		*port[y]=0xfd;
 		*port[x]=ss[i/10];
-		delay(0.03);
+		delay_ms(1);
 		n++;
 	}
 }
 
 /*****function for 3 seven segment*****/
 
-void segment7_3(uint8_t x,uint8_t y,uint64_t i)
+void segment7_3(port_index_t x,port_index_t y,uint64_t i)
 {
 	char ss[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
 	*port[y]=0xff;
@@ -50,20 +50,20 @@ void segment7_3(uint8_t x,uint8_t y,uint64_t i)
 	{
 		*port[y]=0xfe;
 		*port[x]=ss[a];
-		delay(0.01);
+		delay_ms(1);
 		*port[y]=0xfd;
 		*port[x]=ss[b];
-		delay(0.01);
+		delay_ms(1);
 		*port[y]=0xfb;
 		*port[x]=ss[c];
-		delay(0.01);
+		delay_ms(1);
 		n++;
 	}
 }
 
 /*****function for 4 seven segment*****/
 
-void segment7_4(uint8_t x,uint8_t y,uint64_t i)
+void segment7_4(port_index_t x,port_index_t y,uint64_t i)
 {
 	char ss[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
 	*port[y]=0xff;
@@ -75,27 +75,27 @@ void segment7_4(uint8_t x,uint8_t y,uint64_t i)
 	c=i%10;
 	i/=10;
 	d=i%10;
-	while(n<100)
+	while(n<1000)
 	{
-		*port[y]=0xfe;
+		*port[y]=(1<<0);
 		*port[x]=ss[a];
-		delay(0.01);
-		*port[y]=0xfd;
+		delay_ms(1);
+		*port[y]=(1<<1);
 		*port[x]=ss[b];
-		delay(0.01);
-		*port[y]=0xfb;
+		delay_ms(1);
+		*port[y]=(1<<2);
 		*port[x]=ss[c];
-		delay(0.01);
-		*port[y]=0xf7;
+		delay_ms(1);
+		*port[y]=(1<<3);
 		*port[x]=ss[d];
-		delay(0.01);
+		delay_ms(1);
 		n++;
 	}
 }
 
 /*****function for single seven segment with dot*****/
 
-void segment_dot(uint8_t x,uint8_t i)
+void segment_dot(port_index_t x,uint8_t i)
 {
 	char ss[]={0xbf,0x86,0xdb,0xcf,0xe6,0xed,0xfd,0x87,0xff,0xef};
 	*port[x]=ss[i];
@@ -103,7 +103,7 @@ void segment_dot(uint8_t x,uint8_t i)
 
 /*****function for single seven segment for symbols*****/
 
-void segment_symbol(uint8_t x,uint8_t i)
+void segment_symbol(port_index_t x,uint8_t i)
 {
 	char ss[]={0x73,0x40,0x76,0x49};
 	if(i == '+')*port[x]=ss[0];

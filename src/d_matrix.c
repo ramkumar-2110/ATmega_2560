@@ -3,7 +3,7 @@
 static uint8_t row_v;
 static uint8_t col_g;
 
-void dot_matrix_config(uint8_t a,uint8_t b)
+void dot_matrix_config(port_index_t a,port_index_t b)
 {
 	port_config(a,OUTPUT);
 	port_config(b,OUTPUT);

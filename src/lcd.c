@@ -1,9 +1,9 @@
-#include "F:\Atmega\Middleware\Lcd\lcd.h"
+#include "lcd.h"
 
 static uint8_t data_port;
 static uint8_t selection_port;
 
-void lcd_config(uint8_t a,uint8_t b)//a-->data_port  ,  b-->selection_port
+void lcd_config(volatile port_index_t a,volatile port_index_t b)
 {
 	data_port=a;
 	selection_port=b;
@@ -27,19 +27,20 @@ void lcd_init()
 	enable();
 	port_write(data_port,0x0c);
 	enable();
-	port_write(data_port,0x04);
+	port_write(data_port,0x06);
 	enable();
 	port_write(data_port,0x01);
 	enable();
+	delay_ms(2);
 }
-void lcd_command(uint8_t a)//a-->lcd command
+void lcd_command(volatile uint8_t a)
 {
 	pin_write(selection_port,RS,0);
 	delay_ms(1);
 	port_write(data_port,a);
 	enable();
 }
-void lcd_string(char *s)//s-->lcd string
+void lcd_string(volatile char *s)
 {
 	pin_write(selection_port,RS,1);
 	delay_ms(1);
@@ -49,14 +50,14 @@ void lcd_string(char *s)//s-->lcd string
 	enable();
 	}
 }
-void lcd_data(uint8_t a)//a--> lcd data
+void lcd_data(volatile uint8_t a)
 {
 	pin_write(selection_port,RS,1);
 	delay_ms(2);
 	port_write(data_port,a);
 	enable();
 }
-void lcd_create_char(uint8_t location, uint8_t *pattern)//location--> index  , pattern-->emoji patterns 
+void lcd_create_char(volatile uint8_t location,volatile uint8_t *pattern)
 {
 	location &= 0x07;
 
